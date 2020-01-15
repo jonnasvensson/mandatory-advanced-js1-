@@ -37,7 +37,7 @@ class Login extends React.Component {
         }
         return (
             <>
-                <form onSubmit={this.onClickButton}>
+                <form className="formLogin" onSubmit={this.onClickButton}>
                     <input type="text" placeholder="Namn"
                         onChange={this.onChangeInput}
                     />

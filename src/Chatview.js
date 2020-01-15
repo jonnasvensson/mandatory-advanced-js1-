@@ -68,7 +68,7 @@ class Chatview extends React.Component {
     render() {
         let p;
         if (this.state.message.length > 200) {
-            p = <p>Too many characters</p>
+            p = <p className="addingP">Too many characters! <br/> Decrease character to be able to send</p>
         }
 
         const msglist = this.state.messages.map(data => {
@@ -85,14 +85,16 @@ class Chatview extends React.Component {
                 </div>
                 <div className="bottom">
                     <div className="Chat-Input">
-                        <form onSubmit={this.onSubmit}>
+                        <form className="formChatview" onSubmit={this.onSubmit}>
                             <textarea value={this.state.message}
                                 onChange={this.onChange}
                             />
-                            <button className="send">Send</button>
-                            {this.state.message.length}/200
-                                <div className="addingP">{p}</div>
+                            <button className="sendButton">Send</button>
                         </form>
+                        <div className="divCount">
+                        {this.state.message.length}/200
+                                <div className="addingDiv">{p}</div>
+                        </div>
                     </div>
                     <div className="bottomLogout">
                         <button className="logOut" onClick={this.props.logOut}>Log out</button>
