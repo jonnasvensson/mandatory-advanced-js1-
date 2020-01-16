@@ -63,7 +63,7 @@ class Chatview extends React.Component {
         })
     }
     componentWillUnmount() {
-        this.socket.off(this.props.logOut)
+        this.socket.off()
     }
     render() {
         let p;
